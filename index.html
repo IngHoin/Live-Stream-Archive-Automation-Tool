@@ -46,12 +46,12 @@
         
         <div class="feature-box">
             <strong>[데이터 파기 안내]</strong><br>
-            사용자는 본 프로그램 내 제공되는 <span class="highlight">'데이터 파기' 기능</span>을 통해 언제든지 로컬에 저장된 인증 정보 및 관련 데이터를 즉시 삭제할 수 있습니다.
+            사용자는 본 프로그램 내 제공되는 <span class="highlight">'데이터 파기' 기능</span>을 통해 로컬에 저장된 인증 정보 및 관련 데이터를 즉시 삭제할 수 있습니다.
         </div>
 
         <ul>
             <li><strong>암호화 저장:</strong> 모든 인증 토큰(token.json)은 Windows DPAPI(Data Protection API)를 통해 암호화되어 사용자의 로컬 환경에만 저장됩니다.</li>
-            <li><strong>자동 파기:</strong> 프로그램 삭제 시 해당 데이터는 함께 소멸되며, 사용자가 직접 로컬 파일을 삭제하는 경우에도 즉시 파기됩니다.</li>
+            <li><strong>직접 파기:</strong> 본 프로그램은 서버 기반 서비스가 아니므로 자동 파기되지 않으며, 사용자가 프로그램 내 파기 기능을 이용하거나 관련 로컬 파일을 직접 삭제함으로써 데이터를 즉시 파기할 수 있습니다.</li>
         </ul>
 
         <h3>4. 구글 API 정책 준수 및 제3자 제공</h3>
@@ -88,7 +88,7 @@
 
         <ul>
             <li><strong>Encryption:</strong> All authentication tokens (e.g., token.json) are stored on the user's local machine and encrypted using Windows DPAPI (Data Protection API).</li>
-            <li><strong>Retention:</strong> Data is immediately destroyed upon using the in-app destruction feature, manual file deletion, or uninstallation.</li>
+            <li><strong>Retention:</strong> Since the Software is not server-based, data is not automatically destroyed upon uninstallation. Users must use the in-app destruction feature or manually delete the local files to destroy the data.</li>
         </ul>
 
         <h3>4. Compliance with Google API Policy</h3>
