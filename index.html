@@ -21,6 +21,7 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             margin: 0;
+            padding: 40px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -29,59 +30,93 @@
 
         .hero-card {
             background: var(--card-bg);
-            max-width: 600px;
-            width: 90%;
+            max-width: 650px;
+            width: 100%;
             padding: 50px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
             text-align: center;
         }
 
         .icon-wrapper {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: #eff6ff;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
         }
 
-        .icon-wrapper svg {
-            width: 40px;
-            height: 40px;
-            fill: var(--primary);
-        }
+        .icon-wrapper svg { width: 35px; height: 35px; fill: var(--primary); }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             letter-spacing: -0.03em;
             color: var(--secondary);
         }
 
-        p {
+        .subtitle {
             color: var(--text-sub);
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             font-size: 1.05rem;
         }
 
-        .nav-links {
+        /* 기능 설명 섹션 */
+        .features-grid {
             display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .feature-item h3 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item h3::before {
+            content: '✨';
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .feature-item p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .nav-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px 24px;
+            padding: 16px;
             background: #ffffff;
             border: 2px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 14px;
             text-decoration: none;
             color: var(--secondary);
             font-weight: 600;
@@ -92,7 +127,6 @@
             border-color: var(--primary);
             color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
         }
 
         .nav-button.primary {
@@ -103,38 +137,26 @@
 
         .nav-button.primary:hover {
             background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            color: #ffffff;
-        }
-
-        .nav-button span {
-            margin-left: 10px;
-            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
         }
 
         footer {
             margin-top: 40px;
             font-size: 0.85rem;
             color: var(--text-sub);
+            border-top: 1px solid #f1f5f9;
+            padding-top: 25px;
         }
 
-        .badge {
-            display: inline-block;
-            background: #f1f5f9;
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 10px;
+        @media (max-width: 550px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
 <div class="hero-card">
-    <div class="badge">Official Project</div>
     <div class="icon-wrapper">
         <svg viewBox="0 0 24 24">
             <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.67,7.64 21.7,8.27 21.7,9.05V14.96C21.7,15.73 21.67,16.37 21.56,16.83C21.43,17.44 21.11,17.76 20.5,17.89C20.04,18 18.23,18.04 15.85,18.04C13.47,18.04 11.66,18 11.2,17.89C10.59,17.76 10.27,17.44 10.14,16.83C10.03,16.37 10,15.73 10,14.96V9.05C10,8.27 10.03,7.64 10.14,7.17C10.27,6.56 10.59,6.24 11.2,6.11C11.66,6 13.47,5.96 15.85,5.96C18.23,5.96 20.04,6 20.5,6.11C21.11,6.24 21.43,6.56 21.56,7.17M12,12V10H2V12H12M2,16H12V14H2V16M2,8H12V6H2V8Z" />
@@ -142,20 +164,38 @@
     </div>
     
     <h1>Live Stream Archive Tool</h1>
-    <p>스트리밍 아카이브를 유튜브에 자동으로 업로드하고 관리하는 스마트한 도구입니다.</p>
+    <p class="subtitle">스트리밍 아카이브를 유튜브에 자동으로 업로드하고 활용하는 창작자를 위한 스마트 자동화 솔루션입니다.</p>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <h3>자동화 업로드</h3>
+            <p>스트리밍 종료 후 번거로운 업로드 과정을 설정 한 번으로 자동화합니다.</p>
+        </div>
+        <div class="feature-item">
+            <h3>로컬 보안 환경</h3>
+            <p>모든 데이터는 서버가 아닌 사용자 PC 로컬 환경에서만 안전하게 활용됩니다.</p>
+        </div>
+        <div class="feature-item">
+            <h3>데이터 완전 제어</h3>
+            <p>사용자는 언제든지 저장된 인증 정보를 즉시 삭제하고 관리할 수 있습니다.</p>
+        </div>
+        <div class="feature-item">
+            <h3>YouTube API 연동</h3>
+            <p>공식 Google API 스코프를 준수하여 투명하고 안정적인 연동을 지원합니다.</p>
+        </div>
+    </div>
 
     <div class="nav-links">
         <a href="https://github.com/dudlsrnjs21" target="_blank" class="nav-button primary">
-            Project Repository <span>→</span>
+            GitHub Repository 접속하기
         </a>
-        
         <a href="privacy.html" class="nav-button">
-            Privacy Policy <span>📄</span>
+            개인정보 처리방침 (Privacy Policy)
         </a>
     </div>
 
     <footer>
-        © 2026 IngBak. Built for Creators.
+        © 2026 IngBak. All rights reserved.
     </footer>
 </div>
 
