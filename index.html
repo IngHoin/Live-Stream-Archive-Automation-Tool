@@ -55,7 +55,6 @@
         h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: var(--secondary); letter-spacing: -0.04em; }
         .subtitle { color: var(--text-sub); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
-        /* 1. 핵심 특징 카드 (4개) */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -80,10 +79,9 @@
         }
 
         .feature-item h4::before { content: '✨'; margin-right: 8px; font-size: 0.9rem; }
-
         .feature-item p { margin: 0; font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
 
-        /* 2. 상세 기능 리스트 섹션 */
+        /* 상세 기능 섹션 */
         .detail-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -210,19 +208,19 @@
         <div class="detail-group">
             <h3>기본 기능</h3>
             <ul class="detail-list">
-                <li>유튜브 API 연동 동영상 업로드</li>
-                <li>로컬 영상 파일 자동 탐색 및 매칭</li>
-                <li>업로드 상태 실시간 모니터링</li>
-                <li>메타데이터(제목, 설명) 자동 설정</li>
+                <li>유튜브 API를 활용한 동영상 업로드 기능</li>
+                <li>로컬 영상 파일을 감지하여 업로드 리스트 생성</li>
+                <li>업로드 진행 상황 실시간 확인</li>
+                <li>업로드할 영상의 기본 정보(제목, 설명, 카테고리 등) 설정</li>
             </ul>
         </div>
         <div class="detail-group">
             <h3>추가 기능</h3>
             <ul class="detail-list">
-                <li>데이터 암호화 및 로컬 보안 관리</li>
-                <li>원클릭 로컬 인증 데이터 완전 삭제</li>
-                <li>다국어 지원 (한국어/영어)</li>
-                <li>사용자 맞춤형 업로드 스케줄링</li>
+                <li>사용자 인증 정보 암호화 및 로컬 저장</li>
+                <li>저장된 로컬 데이터 일괄 삭제 기능</li>
+                <li>한국어 및 영어 다국어 지원</li>
+                <li>사용자 환경에 맞춘 업로드 설정 커스터마이징</li>
             </ul>
         </div>
     </div>
