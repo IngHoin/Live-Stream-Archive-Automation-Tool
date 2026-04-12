@@ -54,9 +54,8 @@
         .icon-wrapper svg { width: 35px; height: 35px; fill: var(--primary); }
 
         h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: var(--secondary); letter-spacing: -0.04em; }
-        .subtitle { color: var(--text-sub); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .subtitle { color: var(--text-sub); font-size: 1.1rem; max-width: 550px; margin: 0 auto; line-height: 1.6; }
 
-        /* 공통 카드 섹션 타이틀 */
         .section-title {
             font-size: 1.2rem;
             font-weight: 700;
@@ -76,21 +75,18 @@
             border-radius: 2px;
         }
 
-        /* 그리드 시스템 */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
-        /* 카드 개별 스타일 (일관성 유지) */
         .info-card {
             background: var(--feature-bg);
             padding: 25px;
             border-radius: 20px;
             border: 1px solid #e2e8f0;
             text-align: left;
-            transition: transform 0.2s ease;
         }
 
         .info-card h4 {
@@ -102,16 +98,9 @@
         }
 
         .info-card.highlight h4::before { content: '✨'; margin-right: 8px; font-size: 0.9rem; }
-
         .info-card p { margin: 0; font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
 
-        /* 리스트 스타일 카드 전용 */
-        .detail-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
+        .detail-list { list-style: none; padding: 0; margin: 0; }
         .detail-list li {
             font-size: 0.85rem;
             color: var(--text-main);
@@ -120,7 +109,6 @@
             position: relative;
             line-height: 1.4;
         }
-
         .detail-list li::before {
             content: '•';
             position: absolute;
@@ -178,26 +166,26 @@
             </svg>
         </div>
         <h1>Live Stream Archive Tool</h1>
-        <p class="subtitle">스트리밍 아카이브를 유튜브에 자동으로 업로드하고 활용하는 창작자를 위한 스마트 자동화 솔루션입니다.</p>
+        <p class="subtitle">방송 아카이브를 다시보기채널에 업로드하기위한 스트리머를 위한 자동화 솔루션 입니다.</p>
     </div>
 
     <div class="section-title">주요 특징</div>
     <div class="card-grid">
         <div class="info-card highlight">
             <h4>자동화 업로드</h4>
-            <p>스트리밍 종료 후 업로드 과정을 설정 한 번으로 자동화합니다.</p>
+            <p>스트리밍 종료 후 업로드 설정을 자동화 할 수 있습니다.</p>
         </div>
         <div class="info-card highlight">
             <h4>로컬 보안 환경</h4>
-            <p>모든 데이터는 서버가 아닌 사용자 로컬 환경에서만 활용됩니다.</p>
+            <p>서버가 아닌 사용자 컴퓨터서만 저장 및 활용되며, 데이터가 유출 되더라도 설정한 PC가 아닌 곳에서는 데이터 열람이 어렵습니다.</p>
         </div>
         <div class="info-card highlight">
-            <h4>데이터 완전 제어</h4>
-            <p>저장된 인증 정보를 언제든지 즉시 삭제하고 관리할 수 있습니다.</p>
+            <h4>간단 데이터 파기</h4>
+            <p>저장된 정보는 프로그램 내의 데이터 삭제 버튼으로 손쉽게 삭제가 가능합니다.</p>
         </div>
         <div class="info-card highlight">
             <h4>YouTube API 연동</h4>
-            <p>공식 Google API 스코프를 준수하여 투명한 연동을 지원합니다.</p>
+            <p>공식 Google API를 사용하며, 유튜브 커뮤니티를 준수하여 투명한 연동을 지원합니다.</p>
         </div>
     </div>
 
@@ -207,9 +195,8 @@
             <h4>기본 기능</h4>
             <ul class="detail-list">
                 <li>유튜브 API를 활용한 동영상 업로드 기능</li>
-                <li>로컬 영상 파일을 감지하여 업로드 리스트 생성</li>
+                <li>아카이브를 자동 또는 수동으로 지정하여 업로드</li>
                 <li>업로드 진행 상황 실시간 확인</li>
-                <li>업로드할 영상의 기본 정보 설정</li>
             </ul>
         </div>
         <div class="info-card">
@@ -217,8 +204,7 @@
             <ul class="detail-list">
                 <li>사용자 인증 정보 암호화 및 로컬 저장</li>
                 <li>저장된 로컬 데이터 일괄 삭제 기능</li>
-                <li>한국어 및 영어 다국어 지원</li>
-                <li>사용자 환경에 맞춘 업로드 설정 커스터마이징</li>
+                <li>영상 제목 및 설명란 설정</li>
             </ul>
         </div>
     </div>
