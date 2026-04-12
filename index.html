@@ -2,61 +2,160 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="google834a33e30cf4e9da" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Stream Archive Automation Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f7f6; }
-        header { background: #2c3e50; color: white; padding: 60px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2rem; word-break: keep-all; }
-        header p { margin: 15px 0 0; font-size: 1.1rem; opacity: 0.9; word-break: keep-all; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .feature-card { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .feature-card h2 { color: #3498db; margin-bottom: 25px; }
-        .feature-group { margin-bottom: 30px; }
-        .group-title { font-weight: bold; font-size: 1.15rem; color: #2c3e50; margin-bottom: 15px; display: block; }
-        .feature-list { list-style: none; padding: 0; display: inline-block; text-align: left; }
-        .feature-list li { margin: 12px 0; font-size: 1.05rem; color: #555; }
-        footer { margin-top: 80px; padding: 30px; border-top: 1px solid #ddd; font-size: 0.9rem; color: #7f8c8d; text-align: center; }
-        footer a { color: #3498db; text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: #2980b9; text-decoration: underline; }
-        .copyright { margin-bottom: 10px; display: block; font-weight: bold; }
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            max-width: 600px;
+            width: 90%;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: #eff6ff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+
+        .icon-wrapper svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+            color: var(--secondary);
+        }
+
+        p {
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .nav-links {
+            display: grid;
+            gap: 15px;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 24px;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .nav-button:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+        }
+
+        .nav-button.primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .nav-button.primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: #ffffff;
+        }
+
+        .nav-button span {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Live Stream Archive Automation Tool</h1>
-    <p>생방송 아카이브를 자동으로 관리하세요</p>
-</header>
-
-<div class="container">
-    <div class="feature-card">
-        <h2>주요 기능 안내</h2>
-        
-        <div class="feature-group">
-            <span class="group-title">핵심 자동화 기능</span>
-            <ul class="feature-list">
-                <li>✅ 생방송 아카이브 생성 시 자동 업로드</li>
-                <li>✅ 영상 제목 및 유튜브 설명란 직접 지정 기능</li>
-                <li>✅ 시스템 보호 기술을 활용한 안전한 인증 정보 관리</li>
-            </ul>
-        </div>
-
-        <div class="feature-group">
-            <span class="group-title">사용자 맞춤형 선택 기능</span>
-            <ul class="feature-list">
-                <li>✅ 영상 공개 범위(공개, 비공개, 일부공개) 및 <b>예약 공개</b> 설정 기능</li>
-                <li>✅ 썸네일 동시 업로드 기능</li>
-                <li>✅ 원활한 작업 병행을 위한 업로드 속도 조절 기능</li>
-                <li>✅ 모든 작업 완료 후 컴퓨터 자동 종료 기능</li>
-            </ul>
-        </div>
+<div class="hero-card">
+    <div class="badge">Official Project</div>
+    <div class="icon-wrapper">
+        <svg viewBox="0 0 24 24">
+            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.67,7.64 21.7,8.27 21.7,9.05V14.96C21.7,15.73 21.67,16.37 21.56,16.83C21.43,17.44 21.11,17.76 20.5,17.89C20.04,18 18.23,18.04 15.85,18.04C13.47,18.04 11.66,18 11.2,17.89C10.59,17.76 10.27,17.44 10.14,16.83C10.03,16.37 10,15.73 10,14.96V9.05C10,8.27 10.03,7.64 10.14,7.17C10.27,6.56 10.59,6.24 11.2,6.11C11.66,6 13.47,5.96 15.85,5.96C18.23,5.96 20.04,6 20.5,6.11C21.11,6.24 21.43,6.56 21.56,7.17M12,12V10H2V12H12M2,16H12V14H2V16M2,8H12V6H2V8Z" />
+        </svg>
     </div>
     
+    <h1>Live Stream Archive Tool</h1>
+    <p>스트리밍 아카이브를 유튜브에 자동으로 업로드하고 관리하는 스마트한 도구입니다.</p>
+
+    <div class="nav-links">
+        <a href="https://github.com/dudlsrnjs21" target="_blank" class="nav-button primary">
+            Project Repository <span>→</span>
+        </a>
+        
+        <a href="privacy.html" class="nav-button">
+            Privacy Policy <span>📄</span>
+        </a>
+    </div>
+
     <footer>
-        <span class="copyright">© 2026 IngBak. All rights reserved.</span>
-        <a href="privacy.html">개인정보 처리방침 (Privacy Policy)</a>
+        © 2026 IngBak. Built for Creators.
     </footer>
 </div>
 
