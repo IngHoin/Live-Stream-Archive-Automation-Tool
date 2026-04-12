@@ -100,14 +100,31 @@
         .info-card.highlight h4::before { content: '✨'; margin-right: 8px; font-size: 0.9rem; }
         .info-card p { margin: 0; font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
 
-        .detail-list { list-style: none; padding: 0; margin: 0; }
+        /* 통합 상세 기능 카드 스타일 */
+        .full-width-card {
+            grid-column: span 2;
+            background: var(--feature-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .detail-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 30px;
+        }
+        
         .detail-list li {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-main);
-            margin-bottom: 8px;
-            padding-left: 15px;
+            padding-left: 20px;
             position: relative;
-            line-height: 1.4;
+            line-height: 1.6;
+            text-align: left;
         }
         .detail-list li::before {
             content: '•';
@@ -151,6 +168,8 @@
 
         @media (max-width: 650px) {
             .card-grid { grid-template-columns: 1fr; }
+            .full-width-card { grid-column: span 1; }
+            .detail-list { grid-template-columns: 1fr; }
             .hero-card { padding: 30px; }
             h1 { font-size: 1.8rem; }
         }
@@ -189,21 +208,15 @@
         </div>
     </div>
 
-    <div class="section-title">상세 기능 사양</div>
+    <div class="section-title">상세 기능</div>
     <div class="card-grid">
-        <div class="info-card">
-            <h4>기본 기능</h4>
+        <div class="full-width-card">
             <ul class="detail-list">
-                <li>유튜브 API를 활용한 동영상 업로드 기능</li>
+                <li>유튜브 API를 활용한 동영상 업로드</li>
                 <li>아카이브를 자동 또는 수동으로 지정하여 업로드</li>
                 <li>업로드 진행 상황 실시간 확인</li>
-            </ul>
-        </div>
-        <div class="info-card">
-            <h4>추가 기능</h4>
-            <ul class="detail-list">
                 <li>사용자 인증 정보 암호화 및 로컬 저장</li>
-                <li>저장된 로컬 데이터 일괄 삭제 기능</li>
+                <li>저장된 로컬 데이터 일괄 삭제 가능</li>
                 <li>영상 제목 및 설명란 설정</li>
             </ul>
         </div>
